@@ -1,5 +1,4 @@
 # Codon-Usage-Bias
-# Codon-Usage-Bias
 
 R scripts and data for the codon usage bias analysis of hRSV-A and hRSV-B
 (thesis, FJWU Rawalpindi).
@@ -16,9 +15,9 @@ DATA/ and scripts/), then run the scripts in this order:
 1. ENC_01_descriptive.R  (Tables 3.1, 3.5)
 2. ENC_02_anova.R        (Table 3.2)
 3. ENC_03_pearson.R      (Tables 3.3, 3.4)
-4. ENCplot.R             (ENC plot)
-5. COA_plot.R            (correspondence analysis)
-6. RSCU_table.R          (see note below)
+4. ENCplot.R             (ENC plot, Figure 3.1)
+5. COA_plot.R            (correspondence analysis, Figure 3.4)
+6. RSCU_table.R          (Table 3.8)
 
 ## Note
 RSCU_table.R needs CDS FASTA files, which are not included. Download the
