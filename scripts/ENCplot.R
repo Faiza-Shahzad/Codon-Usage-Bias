@@ -5,7 +5,7 @@ library(dplyr)
 dir.create("results", showWarnings = FALSE)
 
 # Load data
-mydata <- read.csv("data/COMBINED_RESULTS.csv", header = TRUE)
+mydata <- read.csv("DATA/COMBINED_RESULTS.csv", header = TRUE)
 mydata$Type <- trimws(mydata$Type)
 mydata$Type <- factor(mydata$Type, levels = c("hRSV-A", "hRSV-B"))
 
