@@ -12,9 +12,6 @@ dir.create("results", showWarnings = FALSE)
 
 dat <- as.data.frame(read_excel("data/CAI_HRSV_A_and_B_Combined.xlsx",
                                 sheet = "CAI_Results"))
-
-# Gene names from sequence labels (same rules as the Excel GeneName formula).
-# Applied from lowest to highest priority, so M2-1 takes precedence.
 x <- dat$Genes
 dat$Gene <- "UNKNOWN"
 dat$Gene[startsWith(x, "L_")]  <- "L"
@@ -29,7 +26,7 @@ dat$Gene[startsWith(x, "NS1")] <- "NS1"
 dat$Gene[grepl("M2-2", x)]     <- "M2-2"
 dat$Gene[grepl("M2-1", x)]     <- "M2-1"
 
-stopifnot(!any(dat$Gene == "UNKNOWN"))   # every sequence must be assigned
-print(table(dat$Gene, dat$Subgroup))     # expect 18 per gene per subgroup
+stopifnot(!any(dat$Gene == "UNKNOWN"))   
+print(table(dat$Gene, dat$Subgroup))     
 
 genes <- c("F", "G", "L", "M", "M2-1", "M2-2", "N", "NS1", "NS2", "P", "SH")
