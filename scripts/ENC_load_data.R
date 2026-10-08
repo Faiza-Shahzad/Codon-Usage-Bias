@@ -8,7 +8,7 @@
 
 dir.create("results", showWarnings = FALSE)
 
-dat <- read.csv("data/COMBINED_RESULTS.csv", stringsAsFactors = FALSE)
+dat <- read.csv("DATA/COMBINED_RESULTS.csv", stringsAsFactors = FALSE)
 
 # Gene name from the sequence title (checked in this order)
 x <- dat$title
