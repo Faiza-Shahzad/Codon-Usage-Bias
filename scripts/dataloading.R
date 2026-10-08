@@ -10,7 +10,7 @@
 library(readxl)
 dir.create("results", showWarnings = FALSE)
 
-dat <- as.data.frame(read_excel("data/CAI_HRSV_A_and_B_Combined.xlsx",
+dat <- as.data.frame(read_excel("DATA/CAI_HRSV_A_and_B_Combined.xlsx",
                                 sheet = "CAI_Results"))
 x <- dat$Genes
 dat$Gene <- "UNKNOWN"
