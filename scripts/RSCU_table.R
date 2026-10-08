@@ -8,15 +8,17 @@
 # RSCU = 1 means no preference; > 1 preferred; < 1 avoided.
 #
 # Input : FASTA files with the CDS of each gene, one folder per subgroup:
-#           data/CDS_FASTA/hRSV-A/*.fasta
-#           data/CDS_FASTA/hRSV-B/*.fasta
+#           DATA/CDS_FASTA/hRSV-A/*.fasta
+#           DATA/CDS_FASTA/hRSV-B/*.fasta
+#         (FASTA files are not included; download the sequences from NCBI
+#          using the accession numbers provided in DATA/)
 # Output: results/RSCU_final_table.csv
 #
 # Base R only, no extra packages needed.
 # AUG (Met), UGG (Trp) and stop codons are excluded (59 codons remain).
 # =====================================================================
 
-fasta_dir  <- "data/CDS_FASTA"
+fasta_dir  <- "DATA/CDS_FASTA"
 subgroups  <- c("hRSV-A", "hRSV-B")
 dir.create("results", showWarnings = FALSE)
 
@@ -94,10 +96,10 @@ for (sg in subgroups) {
 }
 
 # ---- 5. Optional: compare with your existing table ------------------
-if (file.exists("data/RSCU_final_table.csv")) {
-  old <- read.csv("data/RSCU_final_table.csv", check.names = FALSE)
+if (file.exists("DATA/RSCU_final_table.csv")) {
+  old <- read.csv("DATA/RSCU_final_table.csv", check.names = FALSE)
   old <- old[match(final$Codon, old$Codon), ]
-  cat("Max difference vs data/RSCU_final_table.csv\n")
+  cat("Max difference vs DATA/RSCU_final_table.csv\n")
   cat(" hRSV-A:", max(abs(old[["hRSV-A RSCU"]] - final[["hRSV-A RSCU"]])), "\n")
   cat(" hRSV-B:", max(abs(old[["hRSV-B RSCU"]] - final[["hRSV-B RSCU"]])), "\n")
 }
