@@ -4,7 +4,7 @@ library(ca)          # install.packages("ca") if needed
 dir.create("results", showWarnings = FALSE)
 
 # Data load
-rscu_data <- read.csv("data/RSCU_matrix_for_STATA.csv")
+rscu_data <- read.csv("DATA/RSCU_matrix_for_STATA.csv")
 
 # RSCU matrix
 rscu_matrix <- rscu_data[, 5:63]
